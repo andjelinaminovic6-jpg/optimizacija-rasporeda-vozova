@@ -1,0 +1,9 @@
+{
+    // Kada se klikne dugme "Run" (▶) na otvorenom fajlu, terminal krece iz
+    // glavnog foldera projekta. POKRENI.py je napravljen da sam nadje svoje
+    // fajlove, pa radi ispravno u svakom slucaju.
+    "python.terminal.executeInFileDir": false,
+    // Ne trazi od pocetnika da rucno bira interpreter na svakom fajlu.
+    "python.analysis.autoImportCompletions": false,
+    "files.encoding": "utf8"
+}

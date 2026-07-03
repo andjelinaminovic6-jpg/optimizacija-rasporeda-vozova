@@ -1,0 +1,7 @@
+{
+    // Kada student otvori ovaj folder, VS Code ce mu ponuditi da instalira
+    // zvanicnu Python ekstenziju (potrebna za dugme "Run" i za pokretanje).
+    "recommendations": [
+        "ms-python.python"
+    ]
+}

@@ -1,0 +1,9 @@
+=== INSTANCA MANJIH DIMENZIJA ===
+Status resenja: Optimal
+Velicina modela: 328 promenljivih, 287 ogranicenja
+Ukupno zadrzavanje (cilj): 4.0
+Raspored (stanica: vreme dolaska) po vozovima:
+  V1: {'A': 0, 'B': 2, 'C': 4, 'D': 6}
+  V2: {'A': 2, 'B': 4, 'C': 6}
+  V3: {'A': 10, 'B': 8, 'C': 4, 'D': 0}
+  -> grafikon sacuvan: ../slike/instanca_mala.png

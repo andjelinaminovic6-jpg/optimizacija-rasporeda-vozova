@@ -1,0 +1,17 @@
+=== EKSPERIMENT 1: osetljivost na tip pruge (jedno/dvokolosecna) ===
+  kapacitet_pruge=1 -> ukupno zadrzavanje=43.0
+  kapacitet_pruge=2 -> ukupno zadrzavanje=6.0
+  -> grafikon sacuvan: ../slike/osetljivost_pruga.png
+=== EKSPERIMENT 2: osetljivost na intenzitet saobraćaja ===
+  broj_vozova=2 -> ukupno zadrzavanje=3.0
+  broj_vozova=4 -> ukupno zadrzavanje=8.0
+  broj_vozova=6 -> ukupno zadrzavanje=18.0
+  broj_vozova=8 -> ukupno zadrzavanje=29.0
+  broj_vozova=10 -> ukupno zadrzavanje=43.0
+  -> grafikon sacuvan: ../slike/osetljivost_intenzitet.png
+=== EKSPERIMENT 3: osetljivost na vreme voznje po deonici ===
+  vreme_voznje=1 -> ukupno zadrzavanje=7.0
+  vreme_voznje=2 -> ukupno zadrzavanje=43.0
+  vreme_voznje=3 -> ukupno zadrzavanje=251.0
+  -> grafikon sacuvan: ../slike/osetljivost_vreme_voznje.png
+=== Analiza osetljivosti zavrsena ===

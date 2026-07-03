@@ -1,0 +1,16 @@
+{
+    // Ova podesavanja omogucavaju da pritiskom na F5 (ili zeleno dugme "Run")
+    // VS Code UVEK pokrene POKRENI.py, bez obzira koji fajl je trenutno otvoren.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Pokreni seminarski rad",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/POKRENI.py",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}
