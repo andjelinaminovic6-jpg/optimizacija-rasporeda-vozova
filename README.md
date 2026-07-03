@@ -10,11 +10,6 @@
 |---|---|
 | **`POKRENI.bat`** | **Dupli-klik za pokretanje na Windows-u (ne treba nijedan program).** |
 | **`POKRENI.py`** | **Pokretač: u VS Code otvori ovaj fajl i klikni ▶ Run. Sam instalira biblioteke i pokreće sve.** |
-| `OSNOVE_ZA_POCETNIKE.pdf` | Uputstvo od nule za nekog ko nikada nije koristio računar ni programirao. |
-| `UPUTSTVO_KOD_OBJASNJEN.pdf` | Objašnjenje Python-a i svake linije koda. |
-| `Seminarski_rad.docx` | Seminarski rad za predaju (Word, Times New Roman 12pt, 12 strana). |
-| `Dokumentacija_projekta.pdf` | Tehnička dokumentacija projekta (render Markdown fajla). |
-| `Dokumentacija_projekta.md` | Izvorni Markdown za PDF dokumentaciju. |
 | `requirements.txt` | Spisak potrebnih biblioteka (pulp, matplotlib). |
 | `.vscode/` | Podešavanja da dugme „Run" u VS Code odmah radi. |
 | `kod/` | Python (PuLP) izvorni kod modela i instanci. |
