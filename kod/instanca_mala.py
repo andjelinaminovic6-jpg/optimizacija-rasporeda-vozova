@@ -7,6 +7,13 @@
 
 from model import resi_model                 # uvozimo funkciju koja gradi i resava model
 from crtanje import nacrtaj_grafikon_vozova   # uvozimo funkciju za crtanje grafikona vozova
+import os                                     # za putanje nezavisne od radnog foldera
+
+# Folder "slike" racunamo u odnosu na lokaciju OVOG fajla (a ne na trenutni radni
+# folder), pa snimanje slike radi bez obzira odakle je skripta pokrenuta
+# (npr. dugme Run na ovom fajlu u editoru).
+SLIKE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "slike")
+os.makedirs(SLIKE, exist_ok=True)             # napravi folder "slike" ako ne postoji
 
 # --- Definicija podataka instance ---
 BROJ_STANICA = 4                              # stanice: 0=A, 1=B, 2=C, 3=D (od severa ka jugu)
@@ -48,5 +55,5 @@ nacrtaj_grafikon_vozova(                                               # crtamo 
     rezultat["putanje"],                                               # pune putanje vozova
     BROJ_STANICA,                                                      # broj stanica za y-osu
     "Grafikon vozova — instanca manjih dimenzija",                     # naslov
-    "../slike/instanca_mala.png",                                      # gde se snima slika
+    os.path.join(SLIKE, "instanca_mala.png"),                          # gde se snima slika
 )

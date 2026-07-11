@@ -8,6 +8,12 @@
 
 from model import resi_model                 # funkcija koja gradi i resava model
 from crtanje import nacrtaj_grafikon_vozova   # funkcija za crtanje grafikona vozova
+import os                                     # za putanje nezavisne od radnog foldera
+
+# Folder "slike" racunamo u odnosu na lokaciju OVOG fajla (a ne na trenutni radni
+# folder), pa snimanje slike radi bez obzira odakle je skripta pokrenuta.
+SLIKE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "slike")
+os.makedirs(SLIKE, exist_ok=True)             # napravi folder "slike" ako ne postoji
 
 # --- Definicija podataka instance ---
 BROJ_STANICA = 10                             # stanice 0..9 (A..J), poredjane od severa ka jugu
@@ -55,5 +61,5 @@ nacrtaj_grafikon_vozova(                                               # string-
     rezultat["putanje"],                                               # putanje svih vozova
     BROJ_STANICA,                                                      # broj stanica
     "Grafikon vozova — instanca srednjih dimenzija (10 stanica, 10 vozova)",  # naslov
-    "../slike/instanca_srednja.png",                                   # izlazna slika
+    os.path.join(SLIKE, "instanca_srednja.png"),                       # izlazna slika
 )

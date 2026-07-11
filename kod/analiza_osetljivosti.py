@@ -9,6 +9,12 @@
 from model import resi_model                              # funkcija koja gradi i resava model
 from crtanje import nacrtaj_osetljivost, nacrtaj_stubice   # funkcije za crtanje rezultata osetljivosti
 import copy                                               # copy — za bezbedno kopiranje liste vozova
+import os                                                 # za putanje nezavisne od radnog foldera
+
+# Folder "slike" racunamo u odnosu na lokaciju OVOG fajla (a ne na trenutni radni
+# folder), pa snimanje slika radi bez obzira odakle je skripta pokrenuta.
+SLIKE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "slike")
+os.makedirs(SLIKE, exist_ok=True)                        # napravi folder "slike" ako ne postoji
 
 BROJ_STANICA = 10                           # ista pruga kao u instanci srednjih dimenzija (10 stanica)
 HORIZONT = 40                               # isti vremenski horizont
@@ -46,7 +52,7 @@ nacrtaj_stubice(                                                         # nacrt
     ["Jednokolosecna (1)", "Dvokolosecna (2)"],                        # nazivi scenarija
     ciljevi_pruga,                                                      # vrednosti cilja
     "Osetljivost cilja na tip pruge",                                  # naslov
-    "../slike/osetljivost_pruga.png",                                  # izlazni fajl
+    os.path.join(SLIKE, "osetljivost_pruga.png"),                      # izlazni fajl
 )
 
 # =====================================================================================
@@ -67,7 +73,7 @@ nacrtaj_osetljivost(                                                     # nacrt
     brojevi_vozova, ciljevi_int,                                        # x = broj vozova, y = cilj
     "Broj vozova na pruzi (intenzitet saobraćaja)",                     # oznaka x-ose
     "Osetljivost cilja na intenzitet saobraćaja",                      # naslov
-    "../slike/osetljivost_intenzitet.png",                             # izlazni fajl
+    os.path.join(SLIKE, "osetljivost_intenzitet.png"),                 # izlazni fajl
 )
 
 # =====================================================================================
@@ -90,7 +96,7 @@ nacrtaj_osetljivost(                                                    # nacrta
     vremena_voznje, ciljevi_vv,                                        # x = vreme voznje, y = cilj
     "Vreme voznje po deonici (periodi)",                              # oznaka x-ose
     "Osetljivost cilja na vreme voznje po deonici",                   # naslov
-    "../slike/osetljivost_vreme_voznje.png",                          # izlazni fajl
+    os.path.join(SLIKE, "osetljivost_vreme_voznje.png"),              # izlazni fajl
 )
 
 print("=== Analiza osetljivosti zavrsena ===")                          # kraj

@@ -5,6 +5,7 @@
 #  i VREME, isto kao Slika 5-1 u Udzbeniku.
 # =====================================================================================
 
+import os                                # rad sa folderima i putanjama
 import matplotlib                       # matplotlib — biblioteka za crtanje grafika
 matplotlib.use("Agg")                   # "Agg" backend: crta u fajl bez otvaranja prozora (radi na serveru)
 import matplotlib.pyplot as plt         # pyplot — jednostavan interfejs za crtanje
@@ -35,6 +36,7 @@ def nacrtaj_grafikon_vozova(putanje, broj_stanica, naslov, fajl):
     plt.grid(True, linestyle="--", alpha=0.4)              # svetla mreza radi lakseg citanja
     plt.legend(loc="best", fontsize=8)                     # legenda sa imenima vozova
     plt.tight_layout()                                     # uredi razmake da se nista ne preklapa
+    os.makedirs(os.path.dirname(os.path.abspath(fajl)), exist_ok=True)  # napravi ciljni folder ako ne postoji
     plt.savefig(fajl, dpi=150)                             # snimi sliku u fajl (150 dpi = jasna rezolucija)
     plt.close()                                            # zatvori figuru i oslobodi memoriju
     print(f"  -> grafikon sacuvan: {fajl}")                # poruka da je slika napravljena
@@ -55,6 +57,7 @@ def nacrtaj_osetljivost(x_vrednosti, y_vrednosti, x_oznaka, naslov, fajl):
     plt.title(naslov)                                      # naslov grafika
     plt.grid(True, linestyle="--", alpha=0.4)              # mreza
     plt.tight_layout()                                     # uredi razmake
+    os.makedirs(os.path.dirname(os.path.abspath(fajl)), exist_ok=True)  # napravi ciljni folder ako ne postoji
     plt.savefig(fajl, dpi=150)                             # snimi sliku
     plt.close()                                            # zatvori figuru
     print(f"  -> grafikon sacuvan: {fajl}")                # poruka
@@ -74,6 +77,7 @@ def nacrtaj_stubice(oznake, vrednosti, naslov, fajl):
     plt.ylabel("Ukupno zadrzavanje (vrednost cilja)")      # oznaka y-ose
     plt.title(naslov)                                      # naslov
     plt.tight_layout()                                     # uredi razmake
+    os.makedirs(os.path.dirname(os.path.abspath(fajl)), exist_ok=True)  # napravi ciljni folder ako ne postoji
     plt.savefig(fajl, dpi=150)                             # snimi sliku
     plt.close()                                            # zatvori figuru
     print(f"  -> grafikon sacuvan: {fajl}")                # poruka
